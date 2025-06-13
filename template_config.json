@@ -2,7 +2,6 @@
   "template_variables": {
     "subject": "Bienvenido a ArianeStart - Tu privacidad es importante",
     "company_name": "ArianeStart",
-    "logo_url": "https://tu-dominio.com/images/logo.png",
     "main_title": "En ArianeStart estamos comprometidos con proteger tu información personal",
     "main_content": "Tu privacidad es realmente importante para nosotros. Estamos comprometidos a ser transparentes sobre cómo tratamos tus datos, por lo que hemos reescrito nuestra política de privacidad usando un formato más simple y un lenguaje más claro. Nuestra Nueva Declaración de Privacidad entrará en vigor el 15 de julio de 2025, por lo que te animamos a que encuentres tiempo para revisarla. Usar nuestra aplicación en o después de esa fecha nos dirá que has leído y aceptado los términos de la Declaración de Privacidad. Puedes aprender más sobre la actualización en nuestro blog.",
     "disclaimer_text": "Si no te registraste para esta cuenta, puedes ignorar este correo y la cuenta será eliminada.",

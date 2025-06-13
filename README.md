@@ -17,7 +17,6 @@ La plantilla incluye las siguientes variables que puedes reemplazar:
 | ---------------------- | ------------------------------- | --------------------------------- |
 | `{{subject}}`          | Asunto del email                | "Bienvenido a ArianeStart"        |
 | `{{company_name}}`     | Nombre de la empresa            | "ArianeStart"                     |
-| `{{logo_url}}`         | URL del logo de la empresa      | "https://example.com/logo.png"    |
 | `{{main_title}}`       | Título principal del email      | "Bienvenido a nuestra plataforma" |
 | `{{main_content}}`     | Contenido principal del mensaje | "Tu privacidad es importante..."  |
 | `{{disclaimer_text}}`  | Texto de descargo               | "Si no te registraste..."         |
@@ -46,7 +45,6 @@ let template = fs.readFileSync("welcome.html", "utf8");
 const variables = {
   subject: "Bienvenido a ArianeStart",
   company_name: "ArianeStart",
-  logo_url: "https://arianestart.com/logo.png",
   main_title: "Bienvenido a nuestra plataforma",
   main_content: "Gracias por registrarte...",
   // ... más variables
