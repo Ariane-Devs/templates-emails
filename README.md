@@ -25,9 +25,21 @@ La plantilla incluye las siguientes variables que puedes reemplazar:
 | `{{unsubscribe_url}}`  | URL para darse de baja          | "https://example.com/unsubscribe" |
 | `{{browser_view_url}}` | URL para ver en navegador       | "https://example.com/view"        |
 
+## Archivos Incluidos
+
+- **`welcome.html`**: Plantilla principal con variables `{{variable_name}}` para uso en producción
+- **`welcome-preview.html`**: Versión con valores de ejemplo para visualización y testing
+- **`template_config.json`**: Configuración con valores de ejemplo y documentación
+
 ## Uso
 
-1. **Reemplaza las variables**: Sustituye `{{variable_name}}` con los valores reales
+### Para Visualización/Testing
+
+Abre `welcome-preview.html` directamente en tu navegador para ver cómo se verá el email con datos reales.
+
+### Para Producción
+
+1. **Reemplaza las variables**: En `welcome.html`, sustituye `{{variable_name}}` con los valores reales
 2. **Personaliza el estilo**: Modifica los colores y fuentes en los estilos CSS inline
 3. **Prueba en diferentes clientes**: Verifica que se vea correctamente en Gmail, Outlook, etc.
 
