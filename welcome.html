@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{subject}}</title>
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+    <style>
+      /* Reset styles for email clients */
+      body,
+      table,
+      td,
+      p,
+      a,
+      li,
+      blockquote {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+        border: 0;
+        outline: none;
+        text-decoration: none;
+      }
+      /* Responsive styles */
+      @media only screen and (max-width: 600px) {
+        .container {
+          width: 100% !important;
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+        .title {
+          font-size: 32px !important;
+          line-height: 36px !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f7;
+      font-family: Arial, sans-serif;
+    "
+  >
+    <table
+      role="presentation"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+      width="100%"
+      style="background-color: #f2f2f7"
+    >
+      <tr>
+        <td align="center" style="padding: 20px 0">
+          <table
+            role="presentation"
+            cellspacing="0"
+            cellpadding="0"
+            border="0"
+            width="600"
+            class="container"
+            style="background-color: #f2f2f7; border-radius: 8px"
+          >
+            <tr>
+              <td style="padding: 48px 60px" <!-- Header with Logo -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin-bottom: 120px"
+                >
+                  <tr>
+                    <td style="padding-bottom: 120px">
+                      <table
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td style="padding-right: 10px">
+                            <img
+                              src="{{logo_url}}"
+                              alt="{{company_name}} Logo"
+                              style="width: 40px; height: 40px; display: block"
+                            />
+                          </td>
+                          <td style="vertical-align: middle">
+                            <span
+                              style="
+                                color: #000000;
+                                font-size: 12px;
+                                font-family: 'Inter', Arial, sans-serif;
+                                font-weight: 700;
+                              "
+                            >
+                              {{company_name}}
+                            </span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <!-- Main Title -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin-bottom: 48px"
+                >
+                  <tr>
+                    <td>
+                      <h1
+                        class="title"
+                        style="
+                          margin: 0;
+                          color: #4f5a68;
+                          font-size: 40px;
+                          font-family: Arial, sans-serif;
+                          font-weight: 700;
+                          line-height: 44px;
+                        "
+                      >
+                        {{main_title}}
+                      </h1>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Main Content -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                >
+                  <tr>
+                    <td>
+                      <p
+                        style="
+                          margin: 0;
+                          color: #4f5a68;
+                          font-size: 16px;
+                          font-family: Arial, sans-serif;
+                          font-weight: 400;
+                          line-height: 24px;
+                        "
+                      >
+                        {{main_content}}
+                      </p>
+                      <br />
+                      <p
+                        style="
+                          margin: 0;
+                          color: #4f5a68;
+                          font-size: 16px;
+                          font-family: Arial, sans-serif;
+                          font-weight: 400;
+                          line-height: 24px;
+                        "
+                      >
+                        Atentamente,<br />
+                        El equipo de {{company_name}}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Footer Section -->
+    <table
+      role="presentation"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+      width="100%"
+      style="background-color: #f2f2f7"
+    >
+      <tr>
+        <td align="center" style="padding: 0 20px">
+          <table
+            role="presentation"
+            cellspacing="0"
+            cellpadding="0"
+            border="0"
+            width="600"
+            class="container"
+          >
+            <tr>
+              <td
+                style="padding: 32px 60px 48px; border-top: 1px solid #d4d5d6"
+              >
+                <!-- Disclaimer -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin-bottom: 32px"
+                >
+                  <tr>
+                    <td>
+                      <p
+                        style="
+                          margin: 0;
+                          color: rgba(79, 90, 104, 0.6);
+                          font-size: 14px;
+                          font-family: Arial, sans-serif;
+                          font-weight: 400;
+                          line-height: 20px;
+                        "
+                      >
+                        {{disclaimer_text}}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Copyright and Unsubscribe -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin-bottom: 24px"
+                >
+                  <tr>
+                    <td>
+                      <p
+                        style="
+                          margin: 0;
+                          color: rgba(79, 90, 104, 0.6);
+                          font-size: 14px;
+                          font-family: Arial, sans-serif;
+                          font-weight: 400;
+                          line-height: 20px;
+                        "
+                      >
+                        © {{current_year}} {{company_name}}. Todos los derechos
+                        reservados. Recibiste este correo porque te registraste
+                        en {{app_name}}. Para actualizar tus preferencias de
+                        suscripción
+                        <a
+                          href="{{unsubscribe_url}}"
+                          style="color: #5266ee; text-decoration: underline"
+                          >haz clic aquí</a
+                        >.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- View in Browser -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                >
+                  <tr>
+                    <td style="text-align: center">
+                      <a
+                        href="{{browser_view_url}}"
+                        style="
+                          color: #5266ee;
+                          font-size: 14px;
+                          font-family: Arial, sans-serif;
+                          font-weight: 400;
+                          text-decoration: underline;
+                          line-height: 20px;
+                        "
+                      >
+                        Ver este correo en el navegador
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
