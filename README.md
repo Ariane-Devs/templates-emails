@@ -15,8 +15,8 @@ Esta es una plantilla de correo electrónico profesional y responsiva convertida
 
 La plantilla incluye las siguientes variables que puedes reemplazar:
 
-| Variable               | Descripción                     | Ejemplo                           |
-| ---------------------- | ------------------------------- | --------------------------------- |
+| Variable           | Descripción                     | Ejemplo                           |
+| ------------------ | ------------------------------- | --------------------------------- |
 | `subject`          | Asunto del email                | "Bienvenido a ArianeStart"        |
 | `company_name`     | Nombre de la empresa            | "ArianeStart"                     |
 | `logo_url`         | URL del logo personalizado      | "https://mi-dominio.com/logo.png" |
@@ -30,9 +30,10 @@ La plantilla incluye las siguientes variables que puedes reemplazar:
 
 ## Logo Dinámico
 
+{% raw %}
 La plantilla soporta logos personalizados con fallback automático:
 
-- **Con logo personalizado**: Proporciona la variable `{{logo_url` con la URL de tu logo
+- **Con logo personalizado**: Proporciona la variable `{{logo_url}}` con la URL de tu logo
 - **Sin logo personalizado**: Si no envías `logo_url` o está vacía, se usa automáticamente el logo por defecto de ArianeStart
 - **Formato recomendado**: PNG o WebP, 40x40px para mejor visualización
 - **URL absoluta**: Usa URLs completas (https://) para garantizar la visualización en todos los clientes de email
@@ -54,6 +55,8 @@ const variables = {
   // ... otras variables
 };
 ```
+
+{% endraw %}
 
 ## Archivos Incluidos
 
@@ -93,9 +96,9 @@ const variables = {
   // ... más variables
 };
 
-// Reemplazar todas las variables
+// Reemplazar todas las variables (uso de expresiones RegExp escapadas para evitar Liquid en Jekyll)
 Object.keys(variables).forEach((key) => {
-  const regex = new RegExp(`{{${key}`, "g");
+  const regex = new RegExp("\\\\{\\\\{" + key + "\\\\}\\\\}", "g");
   template = template.replace(regex, variables[key]);
 });
 
@@ -116,9 +119,9 @@ with open('template_config.json', 'r', encoding='utf-8') as file:
     config = json.load(file)
     variables = config['template_variables']
 
-# Reemplazar variables
+# Reemplazar variables (escapando dobles llaves en las cadenas)
 for key, value in variables.items():
-    template = template.replace(f'{{{{{key}', value)
+    template = template.replace('{{' + key + '}}', value)
 
 # template ahora contiene el HTML final
 ```

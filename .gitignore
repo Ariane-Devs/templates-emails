@@ -1,0 +1,11 @@
+# Ruby / Jekyll
+/vendor/bundle
+/_site
+.bundle
+.DS_Store
+node_modules/
+.env
+
+# Editor files
+.vscode/
+*.swp
