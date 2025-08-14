@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AriExpert — Factura de suscripción mensual</title>
+    <style>
+      /* Inline styles for email compatibility */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f7fb;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+        background-color: #f5f7fb;
+        padding: 20px 0;
+      }
+      .sr-only {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+      .main {
+        background: #ffffff;
+        margin: 0 auto;
+        width: 600px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .header {
+        background: #ffffff; /* white header to fit dark logo */
+        color: #101118;
+        padding: 18px 24px;
+        text-align: left;
+        border-bottom: 1px solid #e6eef6;
+      }
+      .logo {
+        max-height: 36px;
+        height: auto;
+      }
+      .content {
+        padding: 24px;
+        color: #101118; /* textDefault */
+      }
+      h1 {
+        margin: 0 0 8px 0;
+        font-size: 20px;
+        color: #101118; /* textDefault */
+      }
+      p {
+        margin: 0 0 12px 0;
+        line-height: 1.4;
+      }
+      .details {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+      }
+      .details td,
+      .details th {
+        padding: 10px;
+        border: 1px solid #e6eef6;
+      }
+      .details th {
+        background: #f0f7fb;
+        text-align: left;
+        color: #2f3561; /* tertiaryLight */
+        font-weight: 700;
+      }
+      .amount {
+        font-size: 20px;
+        font-weight: 700;
+        color: #5267ee; /* tertiary */
+      }
+      .cta {
+        display: inline-block;
+        margin: 16px 0;
+        padding: 12px 40px; /* align with site */
+        min-width: 150px;
+        background: #5267ee; /* tertiary */
+        border: 1.5px solid #5267ee;
+        color: #ffffff; /* primary */
+        text-decoration: none;
+        border-radius: 50px; /* pill shape */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+        text-align: center;
+      }
+      a {
+        color: #5267ee;
+      }
+      .footer {
+        font-size: 12px;
+        color: #6b7280;
+        padding: 18px 24px;
+        text-align: center;
+      }
+      @media screen and (max-width: 620px) {
+        .main {
+          width: 92% !important;
+        }
+        .logo {
+          height: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table class="wrapper" style="width: 100%">
+      <thead>
+        <tr>
+          <th class="sr-only">AriExpert email wrapper</th>
+        </tr>
+      </thead>
+      <tr>
+        <td style="text-align: center">
+          <table class="main" style="width: 600px; max-width: 600px">
+            <thead>
+              <tr>
+                <th class="sr-only">AriExpert email main</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="header">
+                <table style="width: 100%; border-collapse: collapse">
+                  <thead>
+                    <tr>
+                      <th class="sr-only">AriExpert header</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td style="vertical-align: middle; text-align: left">
+                      <img
+                        src="https://ariane-devs.github.io/templates-emails/assets/ariane-logo.webp"
+                        alt="Ariane"
+                        class="logo"
+                        style="display: block; height: 36px"
+                      />
+                    </td>
+                    <td
+                      style="
+                        vertical-align: middle;
+                        text-align: right;
+                        color: #2f3561;
+                        font-size: 13px;
+                      "
+                    >
+                      AriExpert · Factura
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="content">
+                <h1>¡Bienvenido a AriExpert, {{customer_name}}!</h1>
+                <p>
+                  Tu suscripción mensual a <strong>AriExpert</strong> ya está
+                  activa. Abajo tienes el resumen del plan y los detalles de
+                  facturación.
+                </p>
+
+                <table
+                  class="details"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr>
+                    <th scope="row">Nombre del servicio</th>
+                    <td>{{subscription_name}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Descripción</th>
+                    <td>{{description}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Propiedades de la suscripción</th>
+                    <td>
+                      <!-- Repite filas o sustituye por una lista cuando se integre con plantilla -->
+                      <table style="width: 100%; border-collapse: collapse">
+                        <thead>
+                          <tr>
+                            <th class="sr-only">Propiedades</th>
+                          </tr>
+                        </thead>
+                        {{#each properties}}
+                        <tr>
+                          <td
+                            style="padding: 6px 0; border: 0; font-size: 14px"
+                          >
+                            <strong>{{key}}:</strong> {{value}}
+                          </td>
+                        </tr>
+                        {{/each}}
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Monto a pagar</th>
+                    <td class="amount">{{currency}} {{amount}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Próxima renovación</th>
+                    <td>
+                      {{renewal_date}}
+                      <small style="color: #6b7280">(renovación mensual)</small>
+                    </td>
+                  </tr>
+                </table>
+
+                <p>
+                  Para administrar tu plan o ver facturas anteriores, visita tu
+                  panel:
+                </p>
+                <p>
+                  <a href="{{manage_url}}" class="cta">Ver plan y facturas</a>
+                </p>
+
+                <hr
+                  style="
+                    border: 0;
+                    border-top: 1px solid #eef6fb;
+                    margin: 18px 0;
+                  "
+                />
+
+                <p style="font-size: 13px; color: #475569">
+                  ¿Necesitas ayuda con AriExpert? Escríbenos a
+                  <a href="mailto:{{contact_email}}">{{contact_email}}</a> o
+                  llámanos al
+                  <a href="tel:{{support_phone}}">{{support_phone}}</a>.
+                </p>
+                <p style="font-size: 12px; color: #94a3b8">
+                  Esta notificación confirma el inicio de una suscripción de
+                  cobro mensual. Si crees que se ha producido un error, contacta
+                  al soporte.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="footer">
+                <p>
+                  AriExpert ·
+                  <a href="mailto:{{contact_email}}">{{contact_email}}</a>
+                </p>
+                <!-- <p><a href="{{unsubscribe_url}}">Darse de baja</a></p> -->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
