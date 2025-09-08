@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AriExpert — Cotización</title>
+    <style>
+      /* Inline styles for email compatibility */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f7fb;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+        background-color: #f5f7fb;
+        padding: 20px 0;
+      }
+      .sr-only {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+      .main {
+        background: #ffffff;
+        margin: 0 auto;
+        width: 600px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .header {
+        background: #ffffff; /* white header to fit dark logo */
+        color: #101118;
+        padding: 18px 24px;
+        text-align: left;
+        border-bottom: 1px solid #e6eef6;
+      }
+      .logo {
+        max-height: 36px;
+        height: auto;
+      }
+      .content {
+        padding: 24px;
+        color: #101118; /* textDefault */
+      }
+      h1 {
+        margin: 0 0 8px 0;
+        font-size: 20px;
+        color: #101118; /* textDefault */
+      }
+      p {
+        margin: 0 0 12px 0;
+        line-height: 1.4;
+      }
+      .details {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0;
+      }
+      .details td,
+      .details th {
+        padding: 10px;
+        border: 1px solid #e6eef6;
+      }
+      .details th {
+        background: #f0f7fb;
+        text-align: left;
+        color: #2f3561; /* tertiaryLight */
+        font-weight: 700;
+      }
+      .amount {
+        font-size: 20px;
+        font-weight: 700;
+        color: #5267ee; /* tertiary */
+      }
+      .cta {
+        display: inline-block;
+        margin: 16px 0;
+        padding: 12px 40px; /* align with site */
+        min-width: 150px;
+        background: #5267ee; /* tertiary */
+        border: 1.5px solid #5267ee;
+        color: #ffffff; /* primary */
+        text-decoration: none;
+        border-radius: 50px; /* pill shape */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+        text-align: center;
+      }
+      a {
+        color: #5267ee;
+      }
+      .items {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+      }
+      .items th,
+      .items td {
+        padding: 10px;
+        border: 1px solid #e6eef6;
+      }
+      .items th {
+        background: #f9fbfe;
+        text-align: left;
+        color: #2f3561;
+        font-weight: 700;
+      }
+      .summary td {
+        padding: 8px 10px;
+        border: 0;
+      }
+      .footer {
+        font-size: 12px;
+        color: #6b7280;
+        padding: 18px 24px;
+        text-align: center;
+      }
+      @media screen and (max-width: 620px) {
+        .main {
+          width: 92% !important;
+        }
+        .logo {
+          height: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table class="wrapper" style="width: 100%">
+      <thead>
+        <tr>
+          <th class="sr-only">AriExpert email wrapper</th>
+        </tr>
+      </thead>
+      <tr>
+        <td style="text-align: center">
+          <table class="main" style="width: 600px; max-width: 600px">
+            <thead>
+              <tr>
+                <th class="sr-only">AriExpert email main</th>
+              </tr>
+            </thead>
+            <tr>
+              <td class="header">
+                <table style="width: 100%; border-collapse: collapse">
+                  <thead>
+                    <tr>
+                      <th class="sr-only">AriExpert header</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td style="vertical-align: middle; text-align: left">
+                      <img
+                        src="https://ariane-devs.github.io/templates-emails/assets/ariane-logo.webp"
+                        alt="Ariane"
+                        class="logo"
+                        style="display: block; height: 36px"
+                      />
+                    </td>
+                    <td
+                      style="
+                        vertical-align: middle;
+                        text-align: right;
+                        color: #2f3561;
+                        font-size: 13px;
+                      "
+                    >
+                      AriExpert · Cotización
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="content">
+                <h1>Cotización #{{quote_number}}</h1>
+                <p>Hola {{customer_name}},</p>
+                <p>
+                  Gracias por solicitar una cotización con
+                  <strong>AriExpert</strong>. A continuación encontrarás el
+                  detalle de los servicios y el monto estimado. Esta cotización
+                  es válida hasta <strong>{{valid_until}}</strong>.
+                </p>
+
+                <table
+                  class="details"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <tr>
+                    <th scope="row">Fecha de emisión</th>
+                    <td>{{issue_date}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Validez</th>
+                    <td>{{valid_until}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Contacto</th>
+                    <td>
+                      {{contact_name}} ·
+                      <a href="mailto:{{contact_email}}">{{contact_email}}</a>
+                    </td>
+                  </tr>
+                </table>
+
+                <table
+                  class="items"
+                  style="width: 100%; border-collapse: collapse"
+                >
+                  <thead>
+                    <tr>
+                      <th>Descripción</th>
+                      <th style="width: 80px; text-align: center">Cantidad</th>
+                      <th style="width: 140px; text-align: right">
+                        Precio unit.
+                      </th>
+                      <th style="width: 140px; text-align: right">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each items}}
+                    <tr>
+                      <td>{{description}}</td>
+                      <td style="text-align: center">{{quantity}}</td>
+                      <td style="text-align: right">
+                        {{currency}} {{unit_price}}
+                      </td>
+                      <td style="text-align: right">{{currency}} {{total}}</td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+
+                <table
+                  style="
+                    width: 100%;
+                    margin-top: 8px;
+                    border-collapse: collapse;
+                  "
+                >
+                  <thead>
+                    <tr>
+                      <th class="sr-only">Notas y resumen</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td
+                      style="width: 60%; vertical-align: top; padding: 6px 12px"
+                    >
+                      <p style="font-size: 13px; color: #475569">
+                        <strong>Notas</strong>
+                      </p>
+                      <p style="font-size: 13px; color: #475569">{{notes}}</p>
+                    </td>
+                    <td
+                      style="width: 40%; vertical-align: top; padding: 6px 12px"
+                    >
+                      <table class="summary" style="width: 100%">
+                        <thead>
+                          <tr>
+                            <th class="sr-only">Resumen de totales</th>
+                          </tr>
+                        </thead>
+                        <tr>
+                          <td style="text-align: left">Subtotal</td>
+                          <td style="text-align: right">
+                            {{currency}} {{subtotal}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left">
+                            Impuestos ({{tax_rate}}%)
+                          </td>
+                          <td style="text-align: right">
+                            {{currency}} {{taxes}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: left; font-weight: 700">
+                            Total estimado
+                          </td>
+                          <td
+                            style="text-align: right; font-weight: 700"
+                            class="amount"
+                          >
+                            {{currency}} {{total_due}}
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <a href="{{accept_url}}" class="cta">Aceptar cotización</a>
+
+                <hr
+                  style="
+                    border: 0;
+                    border-top: 1px solid #eef6fb;
+                    margin: 18px 0;
+                  "
+                />
+
+                <p style="font-size: 13px; color: #475569">
+                  Si tienes preguntas sobre esta cotización, escríbenos a
+                  <a href="mailto:{{contact_email}}">{{contact_email}}</a> o
+                  llámanos al
+                  <a href="tel:{{support_phone}}">{{support_phone}}</a>.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="footer">
+                <p>
+                  AriExpert ·
+                  <a href="mailto:{{contact_email}}">{{contact_email}}</a>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
