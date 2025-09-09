@@ -79,7 +79,7 @@
             style="background-color: #f2f2f7; border-radius: 8px"
           >
             <tr>
-              <td style="padding: 48px 60px" <!-- Header with Logo -->
+              <td style="padding: 48px 60px">
                 <table
                   role="presentation"
                   cellspacing="0"
@@ -99,7 +99,7 @@
                         <tr>
                           <td style="padding-right: 10px">
                             <img
-                              src="{{logo_url|default:'https://ariane-devs.github.io/templates-emails/assets/ariane-logo.webp'}}"
+                              src="{{logo_url|default('https://ariane-devs.github.io/templates-emails/assets/ariane-logo.webp')}}"
                               alt="{{company_name}} Logo"
                               style="width: 40px; height: 40px; display: block"
                             />
