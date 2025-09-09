@@ -185,7 +185,7 @@
 
             <tr>
               <td class="content">
-                <h1>Cotización #{{quote_number}}</h1>
+                <h1>Cotización # {{quote_number}}</h1>
                 <p>Hola {{customer_name}},</p>
                 <p>
                   Gracias por solicitar una cotización con
@@ -230,16 +230,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {{#each items}}
+                    {% for item in items %}
                     <tr>
-                      <td>{{description}}</td>
-                      <td style="text-align: center">{{quantity}}</td>
+                      <td>{{item.description}}</td>
+                      <td style="text-align: center">{{item.quantity}}</td>
                       <td style="text-align: right">
-                        {{currency}} {{unit_price}}
+                        {{item.currency}} {{item.unit_price}}
                       </td>
-                      <td style="text-align: right">{{currency}} {{total}}</td>
+                      <td style="text-align: right">{{item.currency}} {{item.total}}</td>
                     </tr>
-                    {{/each}}
+                    {% endfor %}
                   </tbody>
                 </table>
 
